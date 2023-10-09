@@ -19,8 +19,8 @@ const job = schedule.scheduleJob("* 23 * * 0-5", async () => {
 	let scd = sched.find(el => el.weekday.toLowerCase() === DAYS[weekday_code]);
 	let answer = `*${scd["weekday"]}*\n`;
 		for (let l of scd["lessons"]){
-			answer += `*_${scd["time"]}_*\n`;
-			answer += `${scd["lesson"]}\n\n`
+			answer += `*_${l["time"]}_*\n`;
+			answer += `${l["lesson"]}\n\n`
 		}
 	bot.sendMessage(chat_id, answer, {parse_mode: "Markdown"});
 });
