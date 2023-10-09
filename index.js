@@ -9,7 +9,7 @@ const schedule = require("node-schedule");
 const sched_parse = require("./parser.js");
 const DAYS = require("./days");
 
-const job = schedule.scheduleJob("* 23 * * 0-5", async () => {
+const job = schedule.scheduleJob("0 23 * * 0-5", async () => {
 	// 1030381043 - chat_id with me
 	let chat_id = 1030381043;
 	let sched = await sched_parse();
